@@ -1,6 +1,4 @@
-const lengthOfLongestSubstring = s => {
-    if (s.length === 1) return 1;
-    
+const lengthOfLongestSubstring = s => {    
     let curr = "";
     let longest = "";
     
