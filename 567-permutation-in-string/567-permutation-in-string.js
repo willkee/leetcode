@@ -5,7 +5,6 @@
  */
 var checkInclusion = function(s1, s2) {
     if (s1.length > s2.length) return false;
-    if (s1.length === 10000) return false;
     let pointerA = 0;
     let pointerB = pointerA + s1.length;
     
