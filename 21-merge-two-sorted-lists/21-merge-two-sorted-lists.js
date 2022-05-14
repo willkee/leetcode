@@ -31,8 +31,6 @@ var mergeTwoLists = function(list1, list2) {
     let current1 = head.next;
     let current2 = other;
     
-    let count = 0;
-    
     while (current1 && current2) {
         if (current1.val < current2.val) {
             tail.next = current1;
@@ -41,9 +39,7 @@ var mergeTwoLists = function(list1, list2) {
             tail.next = current2;
             current2 = current2.next;
         }
-
         tail = tail.next;
-        count++;
     }
     
     if (!current1) tail.next = current2;
