@@ -31,7 +31,6 @@ var isPalindrome = function(s) {
             continue
         }
         if (s[left].toLowerCase() !== s[right].toLowerCase()) {
-            console.log(s[left], s[right])
             return false;
         }
         left++;
