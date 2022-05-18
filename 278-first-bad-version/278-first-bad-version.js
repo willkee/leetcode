@@ -21,11 +21,8 @@ var solution = function(isBadVersion) {
         let i = 0;
         
         while (true) {
-            if (!isBadVersion(i)) {
-                i++;
-            } else {
-                break
-            }
+            if (isBadVersion(i)) break;
+            i++;
         }
         return i
     };
