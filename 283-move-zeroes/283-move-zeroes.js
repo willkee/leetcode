@@ -3,16 +3,16 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function(nums) {
-    let l = 0;
-    let r = nums.length - 1;
     
-    while (l <= r) {
-        if (nums[l] !== 0) {
-            l++;
-        } else {
-            nums.splice(l, 1);
-            nums.push(0)
-            r--;
+    let i = 0;
+    for (const num of nums) {
+        if (num !== 0) {
+            nums[i] = num;
+            i++;
         }
     }
+    
+    nums.fill(0, i)
+    
+    return nums;
 };
