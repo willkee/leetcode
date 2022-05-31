@@ -7,11 +7,7 @@ var maxProduct = function(nums) {
     Prediction: 
     Time complexity: O(n)
     Space: O(1)
-    
-    
-
     */
-    if (nums.length === 1) return nums[0]
     
     let min = 1;
     let max = 1;
