@@ -17,8 +17,8 @@ var maxProduct = function(nums) {
         let n = nums[i];
         let temp = max * n;
         
-        max = Math.max(temp, n, min * n)
-        min = Math.min(min * n, temp, n)
+        max = Math.max(temp, min * n, n)
+        min = Math.min(temp, min * n, n)
         global = Math.max(global, max)
     }
     
