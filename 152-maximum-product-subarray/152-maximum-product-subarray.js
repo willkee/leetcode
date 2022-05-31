@@ -14,10 +14,11 @@ var maxProduct = function(nums) {
     let global = -Infinity;
     
     for (let i = 0; i < nums.length; i++) {
-        let temp = max * nums[i];
+        let n = nums[i];
+        let temp = max * n;
         
-        max = Math.max(max * nums[i], nums[i], min * nums[i])
-        min = Math.min(min * nums[i], temp, nums[i])
+        max = Math.max(temp, n, min * n)
+        min = Math.min(min * n, temp, n)
         global = Math.max(global, max)
     }
     
