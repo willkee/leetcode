@@ -20,5 +20,6 @@ var maxProduct = function(nums) {
         min = Math.min(min * nums[i], temp, nums[i])
         global = Math.max(global, max)
     }
+    
     return global;
 };
