@@ -22,9 +22,10 @@ var maxProduct = function(nums) {
             max = 1;
             continue
         }
-            max = Math.max(temp, min * n, n)
-            min = Math.min(temp, min * n, n)
-            global = Math.max(global, max)
+        
+        max = Math.max(temp, min * n, n)
+        min = Math.min(temp, min * n, n)
+        global = Math.max(global, max)
     }
     
     return global;
