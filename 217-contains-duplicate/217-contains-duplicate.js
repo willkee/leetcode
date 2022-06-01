@@ -16,20 +16,12 @@ var containsDuplicate = function(nums) {
     
 
     */
-    const obj = {};
-    /* obj = {
-        
-        1: 1,
-        2: 1,
-        3: 1,
-        }
-        
-        */
-    // [1, 2, 3, 1]
+    const unique = new Set();
+
     for (let i = 0; i < nums.length; i++) {
         const num = nums[i];
-        if (!obj[num]) {
-            obj[num] = 1;
+        if (!unique.has(num)) {
+            unique.add(num)
         } else {
             return true
         }
