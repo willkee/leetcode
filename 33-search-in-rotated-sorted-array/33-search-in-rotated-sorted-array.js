@@ -14,22 +14,16 @@ var search = function(nums, target) {
         
         if (nums[left] <= nums[mid]) {
           if (nums[left] <= target && target <= nums[mid]) {
-            // target is in the left
             right = mid - 1;
-
           } else {
-            // target is in the right
             left = mid + 1;
           }
             
         } else {
             
           if (nums[mid] <= target && target <= nums[right]) {
-            // target is in the right
             left = mid + 1;
-
           } else {
-            // target is in the left
             right = mid - 1;
           }
         }
