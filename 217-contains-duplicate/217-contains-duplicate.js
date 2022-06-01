@@ -18,8 +18,7 @@ var containsDuplicate = function(nums) {
     */
     const unique = new Set();
 
-    for (let i = 0; i < nums.length; i++) {
-        const num = nums[i];
+    for (const num of nums) {
         if (!unique.has(num)) {
             unique.add(num)
         } else {
