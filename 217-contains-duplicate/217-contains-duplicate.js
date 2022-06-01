@@ -16,14 +16,15 @@ var containsDuplicate = function(nums) {
     
 
     */
-    const unique = new Set();
+    const unique = new Set(nums);
+    return Array.from(unique).length !== nums.length
 
-    for (const num of nums) {
-        if (!unique.has(num)) {
-            unique.add(num)
-        } else {
-            return true
-        }
-    }
-    return false
+    // for (const num of nums) {
+    //     if (!unique.has(num)) {
+    //         unique.add(num)
+    //     } else {
+    //         return true
+    //     }
+    // }
+    // return false
 };
