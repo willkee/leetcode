@@ -34,6 +34,5 @@ const updateMatrix = (mat, row, col) => {
             }
         }
     }
-    
     return mat
 }
