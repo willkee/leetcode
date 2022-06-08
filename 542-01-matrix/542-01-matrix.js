@@ -25,7 +25,10 @@ const updateMatrix = (mat, row, col) => {
             const nR = dR+r
             const nC = dC+c
             
-            if (nR >= 0 && nR < mat.length && nC >= 0 && nC < mat[0].length && mat[nR][nC] === "#") {
+            if ((nR >= 0 && nR < mat.length) && 
+                (nC >= 0 && nC < mat[0].length) && 
+                mat[nR][nC] === "#") {
+                
                 mat[nR][nC] = mat[r][c] + 1
                 queue.push([nR, nC])
             }
