@@ -11,11 +11,8 @@ var canConstruct = function(ransomNote, magazine) {
         letters[letter] ? letters[letter]++ : letters[letter] = 1;
     }
     
-    for (let i = 0; i < ransomNote.length; i++) {
-        const letter = ransomNote[i]
-        
+    for (const letter of ransomNote) {
         if (!letters[letter] || letters[letter] <= 0) return false;
-        
         letters[letter]--;
     }
     return true
