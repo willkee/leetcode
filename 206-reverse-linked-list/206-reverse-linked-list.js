@@ -9,13 +9,35 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
+const reverseList = head => {
+    /*
+    Prediction for time: O(n);
+    Prediction for space: O(1);
+    
+    We need a "prev" pointer and a current pointer and a "next" pointer
+    We start with assigning next to head.next;
+    prev is initialized to null;
+    
+    next = head.next;
+    head.next = prev;
+    
+    prev = head;
+    head = next;
+    */    
+    
+    if (!head) return null;
+    
     let prev = null;
+    let next = head.next;
+    
     while (head) {
-        let temp = head.next;
+        next = head.next;
         head.next = prev;
+        
         prev = head;
-        head = temp;
+        head = next;
     }
+    
     return prev;
+    
 };
