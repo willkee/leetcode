@@ -4,12 +4,31 @@
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-    if (!nums.includes(target)) {
-        nums.push(target)
-    }
-    nums.sort((a, b) => a - b)
+//     if (!nums.includes(target)) {
+//         nums.push(target)
+//     }
+//     nums.sort((a, b) => a - b)
     
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === target) return i
-    } 
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] === target) return i
+//     } 
+    if (nums[nums.length - 1] < target) return nums.length
+    if (nums[0] > target) return 0;
+    
+    let left = 0;
+    let right = nums.length - 1;
+    
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        
+        if (nums[mid] === target) {
+            return mid;
+        } else if (nums[mid] < target && nums[mid + 1] > target) {
+            return mid + 1;
+        } else if (nums[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
 };
