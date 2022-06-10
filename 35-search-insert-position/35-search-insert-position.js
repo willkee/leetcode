@@ -15,8 +15,8 @@ var searchInsert = function(nums, target) {
         
         if (nums[mid] === target) {
             return mid;
-        } else if (nums[mid] < target && nums[mid + 1] > target) {
-            return mid + 1;
+        } else if (nums[mid] > target && nums[mid - 1] < target) {
+            return mid;
         } else if (nums[mid] < target) {
             left = mid + 1;
         } else {
