@@ -8,8 +8,7 @@ var subsets = function(nums) {
     
     const dfs = i => {
         if (i >= nums.length) {
-            res.push(subset.slice())
-            return
+            return res.push(subset.slice())
         }
         
         subset.push(nums[i])
