@@ -14,13 +14,12 @@
 var kthSmallest = function(root, k) {
     const arr = [];
     
-    const innerFunc = (root, k) => {
-        if (root.left) innerFunc(root.left, k)
+    const _ = (root, k) => {
+        if (root.left) _(root.left, k)
         arr.push(root.val)
-        if (root.right) innerFunc(root.right, k)
+        if (root.right) _(root.right, k)
     }
-    innerFunc(root, k)
+    _(root, k)
     
     return arr[k - 1]
-    
 };
