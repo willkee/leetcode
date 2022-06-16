@@ -14,12 +14,12 @@
 var kthSmallest = function(root, k) {
     const arr = [];
     
-    const _ = (root, k) => {
-        if (root.left) _(root.left, k)
+    const _kthSmallest = (root, k) => {
+        if (root.left) _kthSmallest(root.left, k)
         arr.push(root.val)
-        if (root.right) _(root.right, k)
+        if (root.right) _kthSmallest(root.right, k)
     }
-    _(root, k)
+    _kthSmallest(root, k)
     
     return arr[k - 1]
 };
