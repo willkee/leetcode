@@ -27,20 +27,17 @@ var kthSmallest = function(root, k) {
 //     _kthSmallest(root)
 //     return vals[k - 1]
     
-    let count = 1
     let val;
-  const dfs = root => {
-    if (!root) return;
+      const dfs = root => {
+        if (!root) return;
 
-    dfs(root.left);
+        dfs(root.left);
+        k--;
+        if (k === 0) val = root.val;
+        
 
-    if (count === k) {
-      val = root.val;
-    }
-    count++;
-
-    dfs(root.right);
-  }
-  dfs(root);
-  return val;
+        dfs(root.right);
+      }
+      dfs(root);
+      return val;
 };
