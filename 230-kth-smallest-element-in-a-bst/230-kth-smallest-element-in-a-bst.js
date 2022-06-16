@@ -12,14 +12,16 @@
  * @return {number}
  */
 var kthSmallest = function(root, k) {
+    // Time complexity: O(n) where n is the number of nodes
+    // Space complexity: O(n)
     const vals = [];
     
-    const _kthSmallest = (root, k) => {
-        if (root.left) _kthSmallest(root.left, k)
+    const _kthSmallest = (root) => {
+        if (root.left) _kthSmallest(root.left)
         vals.push(root.val)
-        if (root.right) _kthSmallest(root.right, k)
+        if (root.right) _kthSmallest(root.right)
     }
-    _kthSmallest(root, k)
+    _kthSmallest(root)
     
     return vals[k - 1]
 };
