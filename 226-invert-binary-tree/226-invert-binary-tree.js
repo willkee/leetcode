@@ -42,18 +42,18 @@ var invertTree = function(root) {
     */
     if (!root) return null;
     
-    const queue = [root]
+    const stack = [root]
     
-    while (queue.length) {
-        const current = queue.shift();
+    while (stack.length) {
+        const current = stack.pop();
         
         [current.left, current.right] = [current.right, current.left]
         // const temp = current.left;
         // current.left = current.right;
         // current.right = temp;
         
-        if (current.left) queue.push(current.left)
-        if (current.right) queue.push(current.right)
+        if (current.left) stack.push(current.left)
+        if (current.right) stack.push(current.right)
     }
     
     return root;
