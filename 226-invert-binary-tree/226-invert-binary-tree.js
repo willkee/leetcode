@@ -11,11 +11,7 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    /*
-    Prediction:
-    Time: O(n)
-    Space: O(n)
-    
+    /*  
     Edge cases: 
     - no root, return null
     - the only node is the root, return root (!root.left, !root.right)
@@ -38,6 +34,11 @@ var invertTree = function(root) {
     }
     
     return root;
+    
+    
+    Prediction:
+        Time: O(n)
+        Space: O(n)
     */
     if (!root) return null;
     
@@ -46,9 +47,10 @@ var invertTree = function(root) {
     while (queue.length) {
         const current = queue.shift();
         
-        const temp = current.left;
-        current.left = current.right;
-        current.right = temp;
+        [current.left, current.right] = [current.right, current.left]
+        // const temp = current.left;
+        // current.left = current.right;
+        // current.right = temp;
         
         if (current.left) queue.push(current.left)
         if (current.right) queue.push(current.right)
