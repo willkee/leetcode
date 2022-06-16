@@ -21,7 +21,7 @@ var kthSmallest = function(root, k) {
         vals.push(root.val)
         if (root.right) _kthSmallest(root.right)
     }
-    _kthSmallest(root)
     
+    _kthSmallest(root)
     return vals[k - 1]
 };
