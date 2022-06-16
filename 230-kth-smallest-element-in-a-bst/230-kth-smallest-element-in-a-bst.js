@@ -12,9 +12,8 @@
  * @return {number}
  */
 var kthSmallest = function(root, k) {
-    if (!root) return null;
-    if (k === 0) return root.val;
     const arr = [];
+    
     const innerFunc = (root, k) => {
         if (root.left) innerFunc(root.left, k)
         arr.push(root.val)
