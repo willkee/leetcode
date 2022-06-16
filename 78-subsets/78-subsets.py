@@ -1,8 +1,9 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        output = [[]]
+        res = [[]]
         
         for num in nums:
-            output += [curr + [num] for curr in output]
+            res += [curr + [num] for curr in res]
         
-        return output
+        return res
+    
