@@ -27,8 +27,8 @@ var fib = function(n) {
     
     fib(n - 1) + fib(n - 2)
     
-    Time complexity: O(2^n)
-    Space complexity: O(n)
+    Time complexity: O(2^n) without memoization. O(n) with memoization
+    Space complexity: O(n) without memoization. O(2n - 2) or O(n) with memoization
     
     */
     
