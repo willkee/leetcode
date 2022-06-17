@@ -36,11 +36,7 @@ var fib = function(n) {
     
     const _fib = n => {
         if (n <= 1) return n;
-
-        if (!memo[n]) {
-            memo[n] = _fib(n - 1) + _fib(n - 2)
-        }
-        
+        if (!memo[n]) memo[n] = _fib(n - 1) + _fib(n - 2)
         return memo[n]
     }
     
