@@ -36,7 +36,7 @@ var fib = function(n) {
     
     const _fib = n => {
         if (n <= 1) return n;
-        return fib(n - 1) + fib(n - 2)
+        return _fib(n - 1) + _fib(n - 2)
 
     }
     
