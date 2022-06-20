@@ -10,29 +10,27 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-// var isValidBST = function(root, prev = -Infinity) {
-//     if (!root) return true;
+var isValidBST = function(root, state = { prev: -Infinity }) {
+    if (!root) return true;
     
-//     isValidBST(root.left, prev)
+    const left = isValidBST(root.left, state)
+    if (!left) return false;
 
-//     if (root.val <= prev) {
-//         return false
-//     } else {
-//         prev = root.val
-//     }
+    if (root.val <= state.prev) return false
+     state.prev = root.val
         
-//     return isValidBST(root.right, prev)
-// };
+    return isValidBST(root.right, state)
+};
 
-var isValidBST = function(node, state = { prev: Number.MIN_SAFE_INTEGER }) {
-  if(!node) return true;
+// var isValidBST = function(node, state = { prev: Number.MIN_SAFE_INTEGER }) {
+//   if(!node) return true;
   
-  const leftValid = isValidBST(node.left, state);
-  if(!leftValid) return false;
+//   const leftValid = isValidBST(node.left, state);
+//   if(!leftValid) return false;
   
-  if(node.val <= state.prev) return false;
+//   if(node.val <= state.prev) return false;
   
-  state.prev = node.val;
+//   state.prev = node.val;
   
-  return isValidBST(node.right, state);
-}
+//   return isValidBST(node.right, state);
+// }
