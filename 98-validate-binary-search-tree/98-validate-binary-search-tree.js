@@ -10,14 +10,14 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isValidBST = function(root, state = { prev: -Infinity }) {
-    if (!root) return true;
-    
-    const left = isValidBST(root.left, state)
-    if (!left) return false;
+var isValidBST = function(root) {
+    const dfs = function(node, min, max) {
+        if(!node) return true;
+        if(!(node.val > min && node.val < max)) return false;
 
-    if (root.val <= state.prev) return false
-     state.prev = root.val
-        
-    return isValidBST(root.right, state)
+        return dfs(node.left, min, node.val) && dfs(node.right, node.val, max);
+    };
+    
+    return dfs(root, -Infinity, Infinity);
+
 };
