@@ -21,16 +21,3 @@ var isValidBST = function(root, state = { prev: -Infinity }) {
         
     return isValidBST(root.right, state)
 };
-
-// var isValidBST = function(node, state = { prev: Number.MIN_SAFE_INTEGER }) {
-//   if(!node) return true;
-  
-//   const leftValid = isValidBST(node.left, state);
-//   if(!leftValid) return false;
-  
-//   if(node.val <= state.prev) return false;
-  
-//   state.prev = node.val;
-  
-//   return isValidBST(node.right, state);
-// }
