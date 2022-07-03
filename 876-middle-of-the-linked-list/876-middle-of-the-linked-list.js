@@ -18,18 +18,12 @@ var middleNode = function(head) {
         curr = curr.next;
     }
     
-    let mid;
-    if (length % 2 === 1) {
-        mid = Math.ceil(length / 2)
-    } else {
-        mid = (length / 2) + 1;
-    }
+    let mid = length % 2 === 1 ? Math.ceil(length/2) : (length/2)+1
     
     let nodeCount = 1;
-    let currNode = head;
-    while (currNode) {
-        if (nodeCount === mid) return currNode;
+    while (head) {
+        if (nodeCount === mid) return head;
         nodeCount++;
-        currNode = currNode.next;
+        head = head.next;
     }
 };
