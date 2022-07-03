@@ -26,4 +26,5 @@ var middleNode = function(head) {
         nodeCount++;
         head = head.next;
     }
+    return null;
 };
