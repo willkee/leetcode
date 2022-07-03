@@ -18,9 +18,9 @@ var middleNode = function(head) {
         curr = curr.next;
     }
     
-    const mid = length % 2 === 1 ? Math.ceil(length/2) : (length/2)+1
+    const mid = length % 2 === 1 ? Math.floor(length/2) : (length/2)
     
-    let nodeCount = 1;
+    let nodeCount = 0;
     while (head) {
         if (nodeCount === mid) return head;
         nodeCount++;
