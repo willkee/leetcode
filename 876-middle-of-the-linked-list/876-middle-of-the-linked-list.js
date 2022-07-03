@@ -10,27 +10,26 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    let current = head;
-    let count = 1;
+    let length = 0;
+    let curr = head;
     
-    while (current) {
-        count++;
-        current = current.next;
+    while (curr) {
+        length++;
+        curr = curr.next;
     }
     
     let mid;
-    if (count % 2 === 1) {
-        mid = Math.ceil(count/2)
+    if (length % 2 === 1) {
+        mid = Math.ceil(length / 2)
     } else {
-        mid = (count/2) + 1
+        mid = (length / 2) + 1;
     }
     
-    let newCurrent = head;
-    while (count) {
-        if (count === mid) {
-            return newCurrent;
-        }
-        newCurrent = newCurrent.next;
-        count--;
+    let nodeCount = 1;
+    let currNode = head;
+    while (currNode) {
+        if (nodeCount === mid) return currNode;
+        nodeCount++;
+        currNode = currNode.next;
     }
 };
