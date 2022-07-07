@@ -9,7 +9,9 @@ const runningSum = nums => {
     let runningSum = 0;
     for (let i = 0; i < nums.length; i++) {
         runningSum += nums[i];
-        res.push(runningSum)
+        res.push(runningSum);
+        
+        
     }
     return res;
 }
