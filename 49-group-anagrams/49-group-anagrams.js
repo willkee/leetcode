@@ -5,19 +5,20 @@
 var groupAnagrams = function(strs) {
     const pairs = [];
     
-    for (const str of strs) {
-        const sortedWord = str.split("").sort().join("");
-        pairs.push([str, sortedWord])
+    for (const word of strs) {
+        const sortedWord = word.split("").sort().join("");
+        pairs.push([word, sortedWord])
     }
     
     const groups = {};
     
-    for (let i = 0; i < pairs.length; i++) {
-        const key = pairs[i][1];
-        const word = pairs[i][0];        
+    for (const pair of pairs) {
+        const originalWord = pair[0];
+        const sortedWord = pair[1];
+              
                         
-        if (groups[key]) groups[key].push(word);
-        else groups[key] = [word]
+        if (groups[sortedWord]) groups[sortedWord].push(originalWord);
+        else groups[sortedWord] = [originalWord]
     }
     
     return Object.values(groups)
