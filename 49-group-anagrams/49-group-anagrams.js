@@ -5,12 +5,11 @@
 var groupAnagrams = function(words) {
     const groups = {};
     
-    for (const originalWord of words) {
-        const sortedWord = originalWord.split("").sort().join("");
+    for (const word of words) {
+        const sorted = word.split("").sort().join("");
         
-        if (groups[sortedWord]) groups[sortedWord].push(originalWord);
-        else groups[sortedWord] = [originalWord]
+        if (groups[sorted]) groups[sorted].push(word);
+        else groups[sorted] = [word]
     }
-
     return Object.values(groups)
 };
