@@ -16,7 +16,6 @@ var groupAnagrams = function(strs) {
         const originalWord = pair[0];
         const sortedWord = pair[1];
               
-                        
         if (groups[sortedWord]) groups[sortedWord].push(originalWord);
         else groups[sortedWord] = [originalWord]
     }
