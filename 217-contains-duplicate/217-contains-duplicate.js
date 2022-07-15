@@ -23,12 +23,8 @@ var containsDuplicate = function(nums) {
     const hashMap = {};
     
     for (const val of nums) {
-        if (hashMap[val]) hashMap[val]++;
+        if (hashMap[val]) return true;
         else hashMap[val] = 1;
-    }
-    
-    for (const key in hashMap) {
-        if (hashMap[key] >= 2) return true;
     }
     
     return false;
