@@ -36,11 +36,10 @@ var moveZeroes = function(nums) {
         if (nums[i] === 0) {
             nums.splice(i, 1);
             nums.push(0);
-            j++;
         } else {
-            j++;            
             i++;
         }
+        j++;
     }
     
     return nums;
