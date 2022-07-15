@@ -11,19 +11,15 @@ var groupAnagrams = function(strs) {
         pairs.push([str, sortedWord])
     }
     
-    const p2 = {};
-    const res = [];
+    const groups = {};
     
     for (let i = 0; i < pairs.length; i++) {
         const key = pairs[i][1];
         const word = pairs[i][0];        
                         
-        if (p2[key]) {
-            p2[key].push(word);
-        } else {
-            p2[key] = [word]
-        }
+        if (groups[key]) groups[key].push(word);
+        else groups[key] = [word]
     }
     
-    return Object.values(p2)
+    return Object.values(groups)
 };
