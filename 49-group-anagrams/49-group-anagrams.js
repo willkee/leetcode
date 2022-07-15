@@ -31,8 +31,6 @@ var groupAnagrams = function(strs) {
     
     if (nulls.length && Object.values(p2).length) {
         return Object.values(p2)
-    } else if (nulls.length) {
-        return [nulls]
     } else {
         return Object.values(p2)
     }
