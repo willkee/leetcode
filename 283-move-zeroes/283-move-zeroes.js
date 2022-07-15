@@ -31,13 +31,14 @@ var moveZeroes = function(nums) {
     
     
     while (i < len) {
-        if (j === nums.length) break;
+        if (j === len) break;
         
         if (nums[i] === 0) {
             nums.splice(i, 1);
             nums.push(0);
             j++;
         } else {
+            j++;            
             i++;
         }
     }
