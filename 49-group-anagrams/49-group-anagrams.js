@@ -5,8 +5,7 @@
 var groupAnagrams = function(strs) {
     const pairs = [];
     
-    for (let i = 0; i < strs.length; i++) {
-        const str = strs[i];
+    for (const str of strs) {
         const sortedWord = str.split("").sort().join("");
         pairs.push([str, sortedWord])
     }
