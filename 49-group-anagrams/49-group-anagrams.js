@@ -12,15 +12,11 @@ var groupAnagrams = function(strs) {
     }
     
     const p2 = {};
-    const nulls = [];
     const res = [];
     
     for (let i = 0; i < pairs.length; i++) {
         const key = pairs[i][1];
-        const word = pairs[i][0];
-        
-        if (!key || !word) nulls.push("")
-        
+        const word = pairs[i][0];        
                         
         if (p2[key]) {
             p2[key].push(word);
@@ -30,7 +26,4 @@ var groupAnagrams = function(strs) {
     }
     
     return Object.values(p2)
-
-    
-    
 };
