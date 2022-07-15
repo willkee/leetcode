@@ -19,6 +19,5 @@ var groupAnagrams = function(strs) {
         if (groups[sortedWord]) groups[sortedWord].push(originalWord);
         else groups[sortedWord] = [originalWord]
     }
-    
     return Object.values(groups)
 };
