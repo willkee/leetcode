@@ -9,7 +9,6 @@ var groupAnagrams = function(strs) {
         const sortedWord = word.split("").sort().join("");
         pairs.push([word, sortedWord])
     }
-    
     const groups = {};
     
     for (const pair of pairs) {
