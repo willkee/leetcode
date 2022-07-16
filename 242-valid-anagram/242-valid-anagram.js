@@ -21,6 +21,6 @@ var isAnagram = function(s, t) {
         else return false;
     }
     
-    return Math.max(...Object.values(letters)) === 0
+    return !Math.max(...Object.values(letters))
     
 };
