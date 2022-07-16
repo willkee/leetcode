@@ -11,14 +11,8 @@ var isAnagram = function(s, t) {
     
     const letters = {};
     
-    for (const sChar of s) {
-        letters[sChar] ? letters[sChar]++ : letters[sChar] = 1
-    }
-    
-    for (const tChar of t) {
-        letters[tChar] ? letters[tChar]-- : false;
-    }
-    
+    for (const sChar of s) letters[sChar] ? letters[sChar]++ : letters[sChar] = 1
+    for (const tChar of t) letters[tChar] ? letters[tChar]-- : false;
     return !Math.max(...Object.values(letters))
     
 };
