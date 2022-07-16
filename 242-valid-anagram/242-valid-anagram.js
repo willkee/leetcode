@@ -4,6 +4,9 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
+    // Time complexity: O(n)
+    // Space complexity: O(n)
+    
     if (s.length !== t.length) return false;
     
     const letters = {};
