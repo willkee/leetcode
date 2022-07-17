@@ -7,7 +7,9 @@ var isPalindrome = function(s) {
     
     let newStr = "";
     for (const char of s) {
-        if (alphaNums.has(char.toLowerCase())) newStr += char.toLowerCase();
+        const lowerChar = char.toLowerCase();
+        
+        if (alphaNums.has(lowerChar)) newStr += lowerChar;
     }
     
     let left = 0;
