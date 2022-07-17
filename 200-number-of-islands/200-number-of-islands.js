@@ -27,7 +27,7 @@ var numIslands = function(grid) {
                             newCol < 0 ||
                             newRow >= grid.length ||
                             newCol >= grid[0].length ||
-                            grid[newRow][newCol] === '0') { continue; }
+                            grid[newRow][newCol] === '0') continue;
                         
                         stack.push([newRow, newCol]);
                     }
