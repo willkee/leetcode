@@ -13,12 +13,14 @@ var generateParenthesis = function(n) {
         if (open < n) {
             stack.push("(");
             helper(open + 1, closed);
+            console.log(stack, '1')
             stack.pop();
         }
         
         if (closed < open) {
             stack.push(")")
             helper(open, closed + 1);
+            console.log(stack, '2')
             stack.pop();
         }
     }
