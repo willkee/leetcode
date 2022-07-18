@@ -19,7 +19,6 @@ var generateParenthesis = function(n) {
         if (closed < open) {
             stack.push(")")
             helper(open, closed + 1);
-            console.log(stack, '2')
             stack.pop();
         }
     }
