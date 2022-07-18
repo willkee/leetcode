@@ -28,7 +28,8 @@ var topKFrequent = function(nums, k) {
         numRepetitions[num] ? numRepetitions[num]++ : numRepetitions[num] = 1;
     }
     
-    const sorted = Object.entries(numRepetitions).sort((a, b) => b[1] - a[1]);
+    const preSort = Object.entries(numRepetitions)
+    const sorted = preSort.sort((a, b) => b[1] - a[1]);
     
     const res = [];
     let i = 0;
