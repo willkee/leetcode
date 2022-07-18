@@ -13,7 +13,6 @@ var generateParenthesis = function(n) {
         if (open < n) {
             stack.push("(");
             helper(open + 1, closed);
-            console.log(stack, '1')
             stack.pop();
         }
         
