@@ -13,11 +13,11 @@
  * @return {string}
  */
 var getDirections = function(root, startValue, destValue) {
-    const getPath = (curr, val, res = "") => {
+    const getPath = (curr, val, path = "") => {
         if (!curr) return '';
-        if (curr.val === val) return res;
+        if (curr.val === val) return path;
         
-        return getPath(curr.left, val, res + "L") + getPath(curr.right, val, res + "R");
+        return getPath(curr.left, val, path + "L") + getPath(curr.right, val, path + "R");
     }
     
     const start = getPath(root, startValue);
@@ -27,7 +27,13 @@ var getDirections = function(root, startValue, destValue) {
     while (i < start.length && i < end.length && start[i] === end[i]) i++;
     
     let output = '';
-    for (let j = i; j < start.length; j++) output += 'U';
+    let climbTree = start.length - i;
+    
+    while (climbTree > 0) {
+        output += "U"
+        climbTree--;
+    }
+    // for (let j = i; j < start.length; j++) output += 'U';
     
     return output + end.slice(i);
 };
