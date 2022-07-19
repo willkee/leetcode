@@ -27,13 +27,8 @@ var getDirections = function(root, startValue, destValue) {
     while (i < start.length && i < end.length && start[i] === end[i]) i++;
     
     let output = '';
-    let climbTree = start.length - i;
+    let climbCount = start.length - i;
     
-    while (climbTree > 0) {
-        output += "U"
-        climbTree--;
-    }
-    // for (let j = i; j < start.length; j++) output += 'U';
-    
+    output += "U".repeat(start.length - i);
     return output + end.slice(i);
 };
