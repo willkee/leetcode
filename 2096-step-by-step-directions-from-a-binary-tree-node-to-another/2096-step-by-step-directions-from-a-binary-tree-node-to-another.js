@@ -26,9 +26,7 @@ var getDirections = function(root, startValue, destValue) {
     let i = 0;
     while (i < start.length && i < end.length && start[i] === end[i]) i++;
     
-    let output = '';
-    let climbCount = start.length - i;
+    const output = "U".repeat(start.length - i);
     
-    output += "U".repeat(start.length - i);
     return output + end.slice(i);
 };
