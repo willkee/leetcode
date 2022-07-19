@@ -22,7 +22,6 @@ var getDirections = function(root, startValue, destValue) {
     
     const start = getPath(root, startValue);
     const end = getPath(root, destValue);
-    console.log(start, end)
     
     let i = 0;
     while (i < start.length && i < end.length && start[i] === end[i]) i++;
