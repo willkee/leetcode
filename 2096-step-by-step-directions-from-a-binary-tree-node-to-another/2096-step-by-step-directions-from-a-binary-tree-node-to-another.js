@@ -26,7 +26,5 @@ var getDirections = function(root, startValue, destValue) {
     let i = 0;
     while (i < start.length && i < end.length && start[i] === end[i]) i++;
     
-    const output = "U".repeat(start.length - i);
-    
-    return output + end.slice(i);
+    return "U".repeat(start.length - i) + end.slice(i);
 };
