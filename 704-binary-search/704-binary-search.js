@@ -8,14 +8,13 @@ var search = function(nums, target) {
     let r = nums.length - 1;
     
     while (l <= r) {
-        let m = Math.floor((l + r)/2);
-        if (nums[m] === target) {
-            return m
-        } else if (nums[m] > target) {
-            r = m - 1;
+        const mid = Math.floor((l+r)/2);
+        if (nums[mid] === target) return mid;
+        if (nums[mid] > target) {
+            r = mid - 1;
         } else {
-            l = m + 1;
+            l = mid + 1;
         }
     }
-    return -1
+    return -1;
 };
