@@ -4,7 +4,9 @@
  * @return {number}
  */
 var searchInsert = function(nums, target) {
-    if (target > nums[nums.length - 1]) return nums.length
+    if (target < nums[0]) return 0;
+    if (target > nums[nums.length - 1]) return nums.length;
+    
     const numSet = new Set(nums);
     numSet.add(target);
     
