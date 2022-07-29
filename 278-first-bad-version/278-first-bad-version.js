@@ -19,14 +19,13 @@ var solution = function(isBadVersion) {
      */
     return function(n) {
         let l = 0;
-        let r = n;
         let first;
         
-        while (l <= r) {
-            let mid = Math.floor((l+r)/2);
+        while (l <= n) {
+            let mid = Math.floor((l+n)/2);
             if (isBadVersion(mid)) {
                 first = mid;
-                r = mid - 1;
+                n = mid - 1;
             } else {
                 l = mid + 1;
             }
