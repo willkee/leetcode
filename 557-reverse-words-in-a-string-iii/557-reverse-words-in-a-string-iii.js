@@ -5,8 +5,6 @@
 var reverseWords = function(s) {
     const sArr = s.split(" ");
     const res = [];
-    for (const word of sArr) {
-        res.push(word.split("").reverse().join(""));
-    }
+    for (const word of sArr) res.push(word.split("").reverse().join(""));
     return res.join(" ")
 };
