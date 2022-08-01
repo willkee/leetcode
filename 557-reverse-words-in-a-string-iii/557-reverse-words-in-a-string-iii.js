@@ -3,9 +3,10 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    s = s.split(" ")
-    for (let i = 0; i < s.length; i++) {
-        s[i] = s[i].split("").reverse().join("")
+    const sArr = s.split(" ");
+    const res = [];
+    for (const word of sArr) {
+        res.push(word.split("").reverse().join(""));
     }
-    return s.join(" ");
+    return res.join(" ")
 };
