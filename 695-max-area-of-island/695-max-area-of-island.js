@@ -20,9 +20,7 @@ var maxAreaOfIsland = function(grid) {
     
     for (let r = 0; r <= maxR; r++) {
         for (let c = 0; c <= maxC; c++) {
-            if (grid[r][c] !== 0) {
-                maxArea = Math.max(maxArea, dfs(r, c))
-            }
+            if (grid[r][c]) maxArea = Math.max(maxArea, dfs(r, c))
         }
     }
     return maxArea;
