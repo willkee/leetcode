@@ -1,4 +1,8 @@
-const lengthOfLongestSubstring = s => {
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
     if (s.length === 1) return 1;
     
     let curr = "";
@@ -17,8 +21,6 @@ const lengthOfLongestSubstring = s => {
                 // replace longest string with current string.
                 longest = curr;
             }
-            // Since there is a duplicate, start again one letter ahead of previous dup value
-            // then add letter to end of string.
             curr = curr.slice(j + 1) + s[i];
         }
 
