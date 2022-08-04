@@ -14,7 +14,7 @@ var maxAreaOfIsland = function(grid) {
         // Sink the land
         grid[r][c] = 0;
         
-        // Recursively visit all 4 directions. Add 1 to the end because there was at least 1 land spot upon entering dfs.
+        // Recursively visit all 4 directions. Increment 1 for each piece of land found.
         return dfs(r-1, c) + dfs(r+1, c) + dfs(r, c-1) + dfs(r, c+1) + 1;
     }
     
@@ -24,6 +24,6 @@ var maxAreaOfIsland = function(grid) {
             if (grid[r][c]) maxArea = Math.max(maxArea, dfs(r, c))
         }
     }
-    // Return the max value
+    // Return the max valu
     return maxArea;
 };
