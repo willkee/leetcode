@@ -25,10 +25,9 @@ var middleNode = function(head) {
         mid = (length / 2);
     }
     
-    let idx = 0;
     while (head) {
-        if (idx === mid) return head;
-        idx++;
+        if (!mid) return head;
+        mid--;
         head = head.next;
     }
 };
