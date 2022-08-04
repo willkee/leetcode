@@ -28,11 +28,8 @@ var checkInclusion = function(s1, s2) {
         };
         
         let match = true;
-        for (const key in obj) {
-            if (obj[key] !== 0) {
-                match = false;
-            }
-        }
+        for (const key in obj) if (obj[key] !== 0) match = false;
+        
         if (match) return true;
     }
     return false;
