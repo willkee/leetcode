@@ -26,11 +26,11 @@ var removeNthFromEnd = function(head, n) {
     let curr2 = head;
     
     while (curr2) {
-        if (fromStart === 1) {
-            curr2.next = curr2.next.next;
-        }
+        if (fromStart === 1) curr2.next = curr2.next.next;
+
         fromStart--;
         curr2 = curr2.next;
     }
+    
     return head;
 };
