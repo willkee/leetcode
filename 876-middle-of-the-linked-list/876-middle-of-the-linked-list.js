@@ -10,15 +10,15 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    let length = 0;
+    let len = 0;
     let curr = head;
     
     while (curr) {
-        length++;
+        len++;
         curr = curr.next;
     }
     
-    let mid = Math.floor(length / 2)
+    let mid = Math.floor(len / 2);
     
     while (head) {
         if (!mid) return head;
