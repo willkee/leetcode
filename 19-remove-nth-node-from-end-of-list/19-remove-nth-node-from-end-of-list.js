@@ -20,20 +20,16 @@ var removeNthFromEnd = function(head, n) {
         curr = curr.next;
     }
     
-    const fromStart = len - n;
+    let fromStart = len - n;
+    if (fromStart === 0) return head.next;
     
-    let currIdx = 0;
     let curr2 = head;
     
     while (curr2) {
-        console.log(curr2, fromStart)
-        if (fromStart === 0) {
-            return head.next;
-        }
-        if (currIdx + 1 === fromStart) {
+        if (fromStart === 1) {
             curr2.next = curr2.next.next;
         }
-        currIdx++;
+        fromStart--;
         curr2 = curr2.next;
     }
     return head;
