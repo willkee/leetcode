@@ -2,11 +2,11 @@
  * @param {number[][]} image
  * @param {number} sr
  * @param {number} sc
- * @param {number} newColor
+ * @param {number} color
  * @return {number[][]}
  */
 var floodFill = function(image, sr, sc, newColor) {
-    if (image[sr][sc] === newColor) return image;
+        if (image[sr][sc] === newColor) return image;
     const stack = [[sr, sc]];
     const val = image[sr][sc];
     
@@ -38,5 +38,4 @@ var floodFill = function(image, sr, sc, newColor) {
          }
      }
     return image;
-
 };
