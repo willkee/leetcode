@@ -24,25 +24,28 @@ var mergeTrees = function(root1, root2) {
         
         c1.val += c2.val;
         
-        console.log(c1.val, c2.val, 'post')
+        if (!c1.left) c1.left = c2.left
+        else stack.push([c1.left, c2.left]);
         
-        if (c1.left && c2.left) {
-            stack.push([c1.left, c2.left]);
-        } else if (c1.left && !c2.left) {
-            stack.push([c1.left, null]);
-        } else if (!c1.left && c2.left) {
-            c1.left = c2.left
-            stack.push([null, c2.left]);
-        }
+        // if (c1.left && c2.left) {
+        //     stack.push([c1.left, c2.left]);
+        // } else if (c1.left && !c2.left) {
+        //     stack.push([c1.left, null]);
+        // } else if (!c1.left && c2.left) {
+        //     c1.left = c2.left
+        //     stack.push([null, c2.left]);
+        // }
         
-        if (c1.right && c2.right) {
-            stack.push([c1.right, c2.right]);
-        } else if (c1.right && !c2.right) {
-            stack.push([c1.right, null]);
-        } else if (!c1.right && c2.right) {
-            c1.right = c2.right
-            stack.push([null, c2.right]);
-        }
+        if (!c1.right) c1.right = c2.right
+        else stack.push([c1.right, c2.right]);
+        // if (c1.right && c2.right) {
+        //     stack.push([c1.right, c2.right]);
+        // } else if (c1.right && !c2.right) {
+        //     stack.push([c1.right, null]);
+        // } else if (!c1.right && c2.right) {
+        //     c1.right = c2.right
+        //     stack.push([null, c2.right]);
+        // }
     }
     
     return root1;
