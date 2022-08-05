@@ -12,12 +12,41 @@
  * @return {TreeNode}
  */
 var mergeTrees = function(root1, root2) {
+    if (!root1 && !root2) return null;
     if (!root1) return root2;
     if (!root2) return root1;
-
-    root1.val += root2.val;
     
-    root1.left = mergeTrees(root1.left, root2.left)
-    root1.right = mergeTrees(root1.right, root2.right);
+    const stack = [[root1, root2]];
+    
+    while (stack.length) {
+        let [c1, c2] = stack.pop();
+        
+        console.log(c1?.val, c2?.val, 'pre')
+        if (!c1 || !c2) continue
+        // if (!c1) c1 = c2
+        // else if (!c2) c2 = c1
+        else c1.val += c2.val;
+        
+        console.log(c1.val, c2.val, 'post')
+        
+        if (c1.left && c2.left) {
+            stack.push([c1.left, c2.left]);
+        } else if (c1.left && !c2.left) {
+            stack.push([c1.left, null]);
+        } else if (!c1.left && c2.left) {
+            c1.left = c2.left
+            stack.push([null, c2.left]);
+        }
+        
+        if (c1.right && c2.right) {
+            stack.push([c1.right, c2.right]);
+        } else if (c1.right && !c2.right) {
+            stack.push([c1.right, null]);
+        } else if (!c1.right && c2.right) {
+            c1.right = c2.right
+            stack.push([null, c2.right]);
+        }
+    }
+    
     return root1;
 };
