@@ -20,12 +20,9 @@ var mergeTrees = function(root1, root2) {
     
     while (stack.length) {
         let [c1, c2] = stack.pop();
-        
-        console.log(c1?.val, c2?.val, 'pre')
         if (!c1 || !c2) continue
-        // if (!c1) c1 = c2
-        // else if (!c2) c2 = c1
-        else c1.val += c2.val;
+        
+        c1.val += c2.val;
         
         console.log(c1.val, c2.val, 'post')
         
