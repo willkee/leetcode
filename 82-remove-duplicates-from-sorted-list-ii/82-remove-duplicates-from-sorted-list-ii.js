@@ -22,10 +22,7 @@ var deleteDuplicates = function(head) {
     
     while (head) {
         if (hashMap[head.val] > 1) {
-            console.log(head)
             head = head.next;            
-            console.log(head)
-
         } else {
             break
         }
