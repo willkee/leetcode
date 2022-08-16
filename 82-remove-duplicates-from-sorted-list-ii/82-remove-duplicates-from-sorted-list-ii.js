@@ -10,6 +10,10 @@
  * @return {ListNode}
  */
 var deleteDuplicates = function(head) {
+    /*
+    Time complexity: O(3n) ~> O(n)
+    Space complexity: O(n)
+    */
     const hashMap = {};
     
     let curr1 = head;
@@ -18,7 +22,6 @@ var deleteDuplicates = function(head) {
         hashMap[val] ? hashMap[val]++ : hashMap[val] = 1;
         curr1 = curr1.next;
     }
-    
     
     while (head) {
         if (hashMap[head.val] > 1) {
