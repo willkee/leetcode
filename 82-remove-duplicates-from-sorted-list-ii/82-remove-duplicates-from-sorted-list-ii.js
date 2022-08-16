@@ -33,9 +33,9 @@ var deleteDuplicates = function(head) {
         const valNext = curr2.next.val;
         if (hashMap[valNext] > 1) {
             curr2.next = curr2.next.next;
-            continue
+        } else {
+            curr2 = curr2.next
         }
-        curr2 = curr2.next
     }
     return head;
 };
