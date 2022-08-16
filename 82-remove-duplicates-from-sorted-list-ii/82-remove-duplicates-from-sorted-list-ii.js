@@ -22,20 +22,18 @@ var deleteDuplicates = function(head) {
     
     while (head) {
         if (hashMap[head.val] > 1) {
-            head = head.next;            
-        } else {
-            break
+            head = head.next;  
+            continue;
         }
+        break;
     }
     
     let curr2 = head;
     while (curr2 && curr2.next) {
-        const valNext = curr2.next.val;
-        if (hashMap[valNext] > 1) {
-            curr2.next = curr2.next.next;
-        } else {
-            curr2 = curr2.next
-        }
+        const nextVal = curr2.next.val;
+        
+        if (hashMap[nextVal] > 1) curr2.next = curr2.next.next;
+        else curr2 = curr2.next
     }
     return head;
 };
