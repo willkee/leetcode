@@ -9,10 +9,6 @@ var tribonacci = function(n) {
         2: 1
     };
     
-    const helper = n => {
-        if (n < 2) return n;
-        if (n === 2) return 1;
-        return cache[n] ? cache[n] : cache[n] = helper(n - 1) + helper(n - 2) + helper(n - 3)
-    }
+    const helper = n => cache[n] !== undefined ? cache[n] : cache[n] = helper(n - 1) + helper(n - 2) + helper(n - 3)
     return helper(n);
 };
