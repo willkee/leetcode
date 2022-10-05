@@ -15,7 +15,6 @@ class Solution:
         for i in range(len(nums)):
             remainder = target - nums[i]
             if remainder in uniqueNums and nums.index(remainder) != i:
-                print(remainder, 'asdasasd')
                 return [i, nums.index(remainder)]
             
             
