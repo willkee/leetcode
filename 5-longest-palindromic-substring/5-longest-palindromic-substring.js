@@ -10,7 +10,7 @@ var longestPalindrome = function(s) {
             let left = i;
             let right = i + j;
             
-            while (s[right] && s[left] === s[right]) {
+            while (s[left] && s[left] === s[right]) {
                 left--;
                 right++;
             }
