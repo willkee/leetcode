@@ -3,6 +3,8 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
+    if (s.length === 1) return s;
+    
     let max = "";
     
     for (let i = 0; i < s.length; i++) {
@@ -17,6 +19,8 @@ var longestPalindrome = function(s) {
             
             if (right - left - 1 >= max.length) {
                 max = s.slice(left + 1, right);
+                
+                if (max.length === s.length) break;
             }
         }
     };
